@@ -1,0 +1,30 @@
+name: gestor_tareas_local
+description: "Gestor de tareas con persistencia SQLite local (Drift) para Android, iOS, Windows, Linux, macOS y web."
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  # drift 2.35 y drift_flutter 0.3 requieren Dart 3.10 o superior (Flutter 3.38+).
+  sdk: ^3.10.0
+
+dependencies:
+  flutter:
+    sdk: flutter
+  # ORM/consultas tipadas sobre SQLite; mismo código en todas las plataformas.
+  drift: ^2.35.0
+  # Abre la base correcta según la plataforma (archivo nativo o WASM en web).
+  drift_flutter: ^0.3.1
+  # Carpeta de soporte de la app donde se guarda el archivo .sqlite (nativo).
+  path_provider: ^2.1.5
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^6.0.0
+  # Generador de código de drift (crea lib/data/app_database.g.dart).
+  drift_dev: ^2.35.0
+  build_runner: ^2.4.0
+
+flutter:
+  uses-material-design: true
